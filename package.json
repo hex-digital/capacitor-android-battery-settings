@@ -1,5 +1,5 @@
 {
-  "name": "capacitor-android-battery-settings",
+  "name": "@hexdigital/capacitor-android-battery-settings",
   "version": "1.0.0",
   "description": "Configure Android battery optimisation settings",
   "main": "dist/plugin.cjs.js",
