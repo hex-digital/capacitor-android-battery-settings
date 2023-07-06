@@ -1,3 +1,4 @@
 export interface BatterySettingsPlugin {
-  echo(options: { value: string }): Promise<{ value: string }>;
+  isBatteryOptimizationEnabled(): Promise<{ isEnabled: boolean }>;
+  requestBatteryOptimizationDisabled(): Promise<void>;
 }
