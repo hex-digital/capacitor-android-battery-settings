@@ -9,6 +9,12 @@ npm install capacitor-android-battery-settings
 npx cap sync
 ```
 
+Add the following to your `AndroidManifest.xml` above the `<application>` tag.
+
+```xml
+<uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+```
+
 ## API
 
 <docgen-index>
