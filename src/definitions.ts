@@ -1,4 +1,4 @@
 export interface BatterySettingsPlugin {
-  isBatteryOptimizationEnabled(): Promise<{ isEnabled: boolean }>;
+  isBatteryOptimizationEnabled(): Promise<{ isUnrestricted: boolean }>;
   requestBatteryOptimizationDisabled(): Promise<void>;
 }

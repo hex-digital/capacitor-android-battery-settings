@@ -6,10 +6,10 @@ export class BatterySettingsWeb
   extends WebPlugin
   implements BatterySettingsPlugin
 {
-  async isBatteryOptimizationEnabled(): Promise<{isEnabled: boolean}> {
+  async isBatteryOptimizationEnabled(): Promise<{isUnrestricted: boolean}> {
     console.log('This plugin is not available on web');
     
-    return {isEnabled: false};
+    return {isUnrestricted: false};
   }
 
   async requestBatteryOptimizationDisabled(): Promise<void> {

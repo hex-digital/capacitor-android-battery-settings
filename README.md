@@ -30,10 +30,10 @@ Add the following to your `AndroidManifest.xml` above the `<application>` tag.
 ### isBatteryOptimizationEnabled()
 
 ```typescript
-isBatteryOptimizationEnabled() => Promise<{ isEnabled: boolean; }>
+isBatteryOptimizationEnabled() => Promise<{ isUnrestricted: boolean; }>
 ```
 
-**Returns:** <code>Promise&lt;{ isEnabled: boolean; }&gt;</code>
+**Returns:** <code>Promise&lt;{ isUnrestricted: boolean; }&gt;</code>
 
 --------------------
 

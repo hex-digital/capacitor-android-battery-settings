@@ -24,15 +24,13 @@ public class BatterySettingsPlugin extends Plugin {
   public void isBatteryOptimizationEnabled(PluginCall call) {
     try {
       PowerManager powerManager = (PowerManager) getContext().getSystemService(Context.POWER_SERVICE);
-      boolean isBatteryOptimizationEnabled = false;
-      if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
-        isBatteryOptimizationEnabled = powerManager.isIgnoringBatteryOptimizations(getContext().getPackageName());
-      }
+      boolean isBatteryOptimisationUnrestricted = false;
+      isBatteryOptimisationUnrestricted = powerManager.isIgnoringBatteryOptimizations(getContext().getPackageName());
       JSObject result = new JSObject();
-      result.put("isEnabled", isBatteryOptimizationEnabled);
-      call.success(result);
+      result.put("isUnrestricted", isBatteryOptimisationUnrestricted);
+      call.resolve(result);
     } catch (Exception e) {
-      call.error(e.getMessage(), e);
+      call.reject(e.getMessage(), e);
     }
   }
 
@@ -41,11 +39,11 @@ public class BatterySettingsPlugin extends Plugin {
     try {
       Intent intent = new Intent();
       intent.setAction(Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS);
-      intent.setData(Uri.parse("package:" + getContext().getPackageName()));
+      intent.setData(Uri.fromParts("package", getContext().getPackageName(), null));
       getContext().startActivity(intent);
-      call.success();
+      call.resolve();
     } catch (Exception e) {
-      call.error(e.getMessage(), e);
+      call.reject(e.getMessage(), e);
     }
   }
 }
