@@ -1,6 +1,6 @@
 {
   "name": "@hexdigital/capacitor-android-battery-settings",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Configure Android battery optimisation settings",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
@@ -9,9 +9,7 @@
   "files": [
     "android/src/main/",
     "android/build.gradle",
-    "dist/",
-    "ios/Plugin/",
-    "CapacitorAndroidBatterySettings.podspec"
+    "dist/"
   ],
   "author": "Wisam Halawi",
   "license": "MIT",
@@ -47,16 +45,13 @@
     "@capacitor/android": "^5.0.0",
     "@capacitor/core": "^5.0.0",
     "@capacitor/docgen": "^0.0.18",
-    "@capacitor/ios": "^5.0.0",
     "@ionic/eslint-config": "^0.3.0",
     "@ionic/prettier-config": "^1.0.1",
-    "@ionic/swiftlint-config": "^1.1.2",
     "eslint": "^7.11.0",
     "prettier": "~2.3.0",
     "prettier-plugin-java": "~1.0.2",
     "rimraf": "^3.0.2",
     "rollup": "^2.32.0",
-    "swiftlint": "^1.0.1",
     "typescript": "~4.1.5"
   },
   "peerDependencies": {
@@ -68,9 +63,6 @@
     "extends": "@ionic/eslint-config/recommended"
   },
   "capacitor": {
-    "ios": {
-      "src": "ios"
-    },
     "android": {
       "src": "android"
     }
